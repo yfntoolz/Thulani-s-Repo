@@ -1,0 +1,114 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Pages_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>We Live Sales</title>
+    <link rel="icon" href="Images/icon.png" />
+    <link rel="Stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrapper">
+        <div id="logo_panel">
+            <img id="vhoLogo3" src="../Images/logo.png" align="right" alt="logo" />
+            <h1>
+                Sales Inc.</h1>
+            <h3>
+                We Live Sales</h3>
+        </div>
+        <div id="navigation">
+            <ul id="nav">
+                <li><a href="SalesMeetingForm.aspx">Sales Meeting<br />
+                    Form</a></li>
+                <li><a href="WordageForm.aspx">Wordage<br /> Form</a></li>
+            </ul>
+            <asp:Button ID="btnLogoutAdvisor" runat="server" Text="Logout" align="right" 
+                onclick="btnLogoutAdvisor_Click" PostBackUrl="~/Login.aspx" />
+        </div>
+        <div id="content_area">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="sidebar">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">
+                    </div>
+                    <img src="../Images/Sales1.jpg" width="420px" height="200px">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">
+                    </div>
+                    <img src="../Images/Sales2.jpg" width="420px" height="200px">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">
+                    </div>
+                    <img src="../Images/Sales3.png" width="420px" height="200px">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">
+                    </div>
+                    <img src="../Images/Sales4.jpg" width="420px" height="200px">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">
+                    </div>
+                    <img src="../Images/Sales5.jpg" width="420px" height="200px">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">
+                    </div>
+                    <img src="../Images/Sales6.png" width="420px" height="200px">
+                </div>
+            </div>
+            <br>
+            <div style="text-align: center">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span><span
+                    class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </div>
+            <script type="text/javascript">
+                var slideIndex = 0;
+                showSlides();
+
+                function showSlides() {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("dot");
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) { slideIndex = 1 }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                    setTimeout(showSlides, 4000); // Change image every 4 seconds
+                }
+            </script>
+        </div>
+        <div id="socialMedia">
+            <a href="http://www.instagram.com">
+                <img src="../Images/iglogo.png" height="50" width="50" /></a>&nbsp;&nbsp;&nbsp;
+            <a href="http://www.facebook.com">
+                <img src="../Images/facebooklogo.png" height="50" width="50" /></a>&nbsp;&nbsp;&nbsp;
+            <a href="http://www.twitter.com">
+                <img src="../Images/twitterlogo.png" height="50" width="50" /></a>&nbsp;&nbsp;&nbsp;
+            <a href="http://www.snapchat.com">
+                <img src="../Images/snapchatlogo.png" height="50" width="50" /></a>&nbsp;&nbsp;&nbsp;
+            <a href="http://www.linkedin.com">
+                <img src="../Images/linkedinlogo.png" height="50" width="50" /></a>&nbsp;&nbsp;&nbsp;
+            <a href="http://www.youtube.com">
+                <img src="../Images/youtubelogo.png" height="50" width="80" /></a>
+        </div>
+        <div id="footer">
+            <p>
+                All rights reserved</p>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
